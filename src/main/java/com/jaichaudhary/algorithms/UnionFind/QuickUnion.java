@@ -31,7 +31,7 @@ public class QuickUnion
 
 	public void union(int p, int q) {
 		if(!connected(p, q)) {
-			id[p] = id[q];
+			id[root(p)] = id[root(q)];
 			count--;
 		}
 
