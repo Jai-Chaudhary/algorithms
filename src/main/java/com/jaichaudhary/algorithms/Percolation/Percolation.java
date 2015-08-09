@@ -10,20 +10,37 @@ public class Percolation {
         }
     } 
 
+    private boolean indicesInBound(int i, int j) {
+        return ( i < grid.length && i >= 0) && ( j < grid[0].length && j >= 0);
+    }
 
     // open site (row i, column j) if it is not open already
     public void open(int i, int j) throws IndexOutOfBoundsException {
-
+        if (indicesInBound(i, j)) {
+            grid[i][j] = 1;
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+        
     }
 
     // is site (row i, column j) open?
     public boolean isOpen(int i, int j) throws IndexOutOfBoundsException {
-        return false;
+        if (indicesInBound(i, j)) {
+            return grid[i][j] == 1;
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+        
     }
 
     // is site (row i, column j) full?
     public boolean isFull(int i, int j) throws IndexOutOfBoundsException {
-        return false;
+        if (indicesInBound(i, j)) {
+            return grid[i][j] == 0;
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
     }
 
     // does the system percolate?
