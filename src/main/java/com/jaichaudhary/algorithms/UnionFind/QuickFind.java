@@ -1,3 +1,9 @@
+package com.jaichaudhary.algorithms.UnionFind;
+
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
+
 public class QuickFind 
 	implements UnionFind {
 	private int[] id;
