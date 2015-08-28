@@ -41,6 +41,7 @@ public class QuickFind
 
 	}
 
+	// test client filters out extraneous pairs from the sequence
 	public static void main(String[] args) {
 		int N = StdIn.readInt();
 		UnionFind uf = new QuickFind(N);
@@ -48,8 +49,10 @@ public class QuickFind
 			int p = StdIn.readInt();
 			int q = StdIn.readInt();
 			if (!uf.connected(p, q)) {
-				 uf.union(p, q);
-				 StdOut.println(p + " " + q);
+				uf.union(p, q);
+				StdOut.println("Connected: " + p + " & " + q);
+			} else {
+				StdOut.println(p + " & " + q + " are already Connected");
 			}
 		}
 	}
