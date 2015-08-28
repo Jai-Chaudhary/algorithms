@@ -1,3 +1,12 @@
+package com.jaichaudhary.algorithms.Percolation;
+
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
+import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+import edu.princeton.cs.algs4.UF;
+
+import com.jaichaudhary.algorithms.UnionFind.*;
+
 public class Percolation {
     private int[][] grid;
 
@@ -17,7 +26,9 @@ public class Percolation {
     // open site (row i, column j) if it is not open already
     public void open(int i, int j) throws IndexOutOfBoundsException {
         if (indicesInBound(i, j)) {
-            grid[i][j] = 1;
+            if (isFull(i, j)) {
+                grid[i][j] = 1;
+            }
         } else {
             throw new IndexOutOfBoundsException();
         }
@@ -45,6 +56,7 @@ public class Percolation {
 
     // does the system percolate?
     public boolean percolates() {
+        WeightedQuickUnionUF uf = new WeightedQuickUnionUF(1);
         return false;
     }
     
