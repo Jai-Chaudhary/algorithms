@@ -1,13 +1,12 @@
 package com.jaichaudhary.algorithms.Percolation;
 
 import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 import com.jaichaudhary.algorithms.UnionFind.*;
 
 public class Percolation {
     private int[][] grid;
-    private WeightedQuickUnionUF uf;
+    private WeightedQuickUnion uf;
 
     // create N-by-N grid, with all sites blocked
     public Percolation(int N) {
@@ -19,7 +18,7 @@ public class Percolation {
         }
 
         // generate union find representation from grid
-        uf = new WeightedQuickUnionUF(N * N);
+        uf = new WeightedQuickUnion(N * N);
         for(int i = 0; i < N; i++) {
             for(int j = 0; j < N; j++) {
                 if(isOpen(i, j)) {
