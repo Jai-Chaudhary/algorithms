@@ -1,10 +1,7 @@
 package com.jaichaudhary.algorithms.Percolation;
 
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
-import edu.princeton.cs.algs4.UF;
 
 import com.jaichaudhary.algorithms.UnionFind.*;
 
