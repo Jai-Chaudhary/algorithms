@@ -18,7 +18,7 @@ public class StackOfStrings {
 	}
 
 	public String pop() {
-		return arr[size--];
+		return arr[--size];
 	}
 
 	public int size() {
