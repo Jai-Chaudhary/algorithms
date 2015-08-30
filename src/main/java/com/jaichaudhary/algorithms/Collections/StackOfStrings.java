@@ -1,15 +1,15 @@
-package com.jaichaudhary.algorithms.Collections;
+package com.jaichaudhary.algorithms.collections;
 
-import edu.princeton.cs.StdIn;
-import edu.princeton.cs.StdOut;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 public class StackOfStrings {
 	
-	private Stirng[] arr;
+	private String[] arr;
 	private int size;
 
 	public StackOfStrings(int maxSize) {
-		arr = new Stirng[maxSize];
+		arr = new String[maxSize];
 		size = 0;
 	}
 
@@ -33,8 +33,8 @@ public class StackOfStrings {
 		int N = StdIn.readInt();
 		StackOfStrings sos = new StackOfStrings(N);
 		while (!StdIn.isEmpty()) {
-			int item = StdIn.readString();
-			if (item == "-") {
+			String item = StdIn.readString();
+			if (item.equals("-")) {
 				StdOut.println(sos.pop());
 			} else {
 				sos.push(item);
