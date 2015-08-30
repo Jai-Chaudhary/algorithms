@@ -1,5 +1,8 @@
 package com.jaichaudhary.algorithms.Collections;
 
+import edu.princeton.cs.StdIn;
+import edu.princeton.cs.StdOut;
+
 public class StackOfStrings {
 	
 	private Stirng[] arr;
@@ -10,12 +13,12 @@ public class StackOfStrings {
 		size = 0;
 	}
 
-	public void push() {
-
+	public void push(String item) {
+		arr[size++] = item;
 	}
 
 	public String pop() {
-
+		return arr[size--];
 	}
 
 	public int size() {
@@ -27,7 +30,16 @@ public class StackOfStrings {
 	}
 
 	public static void main(String[] args) {
-
+		int N = StdIn.readInt();
+		StackOfStrings sos = new StackOfStrings(N);
+		while (!StdIn.isEmpty()) {
+			int item = StdIn.readString();
+			if (item == "-") {
+				StdOut.println(sos.pop());
+			} else {
+				sos.push(item);
+			}
+		}
 	}
 
 }
