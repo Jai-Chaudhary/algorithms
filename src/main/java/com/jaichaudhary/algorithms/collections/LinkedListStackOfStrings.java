@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 
-public class StackOfStringsLinkedList {
+public class LinkedListStackOfStrings {
 
 	private class Node {
 		String item;
@@ -39,7 +39,7 @@ public class StackOfStringsLinkedList {
 	}
 
 	public static void main(String[] args) {
-		StackOfStringsLinkedList sos = new StackOfStringsLinkedList();
+		LinkedListStackOfStrings sos = new LinkedListStackOfStrings();
 		while(!StdIn.isEmpty()) {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
