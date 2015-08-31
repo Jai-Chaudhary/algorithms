@@ -18,7 +18,9 @@ public class FixedCapacityStackOfStrings {
 	}
 
 	public String pop() {
-		return arr[--size];
+		String item = arr[--size];
+		s[size] = null;
+		return item;
 	}
 
 	public int size() {
