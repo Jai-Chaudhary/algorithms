@@ -1,5 +1,9 @@
 package com.jaichaudhary.algorithms.collections;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
+
 public class ResizingArrayStackOfStrings {
 
 	private String[] arr = new String[1];
@@ -40,7 +44,15 @@ public class ResizingArrayStackOfStrings {
 	}
 
 	public static void main(String[] args) {
-
+		ResizingArrayStackOfStrings sos = new ResizingArrayStackOfStrings();
+		while (!StdIn.isEmpty()) {
+			String item = StdIn.readString();
+			if (item.equals("-")) {
+				StdOut.println(sos.pop());
+			} else {
+				sos.push(item);
+			}
+		}
 	}
 
 }
