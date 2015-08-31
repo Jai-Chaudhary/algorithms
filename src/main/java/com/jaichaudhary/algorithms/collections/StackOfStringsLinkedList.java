@@ -40,9 +40,9 @@ public class StackOfStringsLinkedList {
 		return size;
 	}
 
-	public static void main() {
+	public static void main(String[] args) {
 		StackOfStringsLinkedList sos = new StackOfStringsLinkedList();
-		while(!StdOut.isEmpty()) {
+		while(!StdIn.isEmpty()) {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
 				StdOut.println(sos.pop());
