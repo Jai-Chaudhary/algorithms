@@ -3,8 +3,8 @@ package com.jaichaudhary.algorithms.collections;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
-public class StackOfStrings {
-	
+public class FixedCapacityStackOfStrings {
+
 	private String[] arr;
 	private int size;
 
