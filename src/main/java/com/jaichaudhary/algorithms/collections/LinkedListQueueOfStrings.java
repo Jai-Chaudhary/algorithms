@@ -31,6 +31,9 @@ public class LinkedListQueueOfStrings {
 		String item = first.item;
 		first = first.next;
 		size--;
+		if(isEmpty()) {
+			last = null;
+		}
 		return item;
 	}
 
