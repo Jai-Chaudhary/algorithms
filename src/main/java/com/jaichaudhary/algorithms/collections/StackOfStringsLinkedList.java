@@ -8,12 +8,17 @@ public class StackOfStringsLinkedList {
 		Node next;
 	}
 
-	public StackOfStringsLinkedList() {
+	private Node first;
 
+	public StackOfStringsLinkedList() {
+		Node first = null;
 	}
 
 	public void push(String input) {
-
+		Node oldFirst = first;
+		first = new Node();
+		first.item = input;
+		first.next = oldFirst;
 	}
 
 	public String pop() {
@@ -25,7 +30,7 @@ public class StackOfStringsLinkedList {
 	}
 
 	public int size() {
-		
+
 	}
 
 }
