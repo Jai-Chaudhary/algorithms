@@ -1,43 +1,43 @@
 package com.jaichaudhary.algorithms.collections;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 public class ResizingArrayQueueOfStrings {
 
-	private String[] arr;
-	private int size;
+	private String[] arr = new String[1];
+	private int size = 0;
 	private int first = 0;
 	private int last = 0;
 
 	public void enqueue(String item) {
 		if(size == arr.length) {
-			resize(2 * arr.length);
+			resize(2 * size);
 		}
-		last = (last + 1) % arr.length;
-		arr[last] = item;
+		arr[last++] = item;
 		size++;
+		if( last == arr.length) last = 0;
 	}
 
-	public String dequeue() {
+	public String dequeue() throws NoSuchElementException{
+		if(isEmpty())	throw new NoSuchElementException("Queue underflow");
 		String item = arr[first];
-		first = (first + 1) % arr.length;
+		arr[first] = null;
 		size--;
-		if(isEmpty()) {
-			first = 0;
-			last = 0;
-		} else if(arr.length <= 1 / 4 * size) {
-			resize(1 / 4 * size);
+		first++;
+		if( first == arr.length)	first = 0;
+ 		if(arr.length <=  size / 4) {
+			resize(size / 2);
 		}
 		return item;
 	}
 
 	private void resize(int capacity){
-		String[] newArr = new String[capacity];
-		int count = 0;
-		for( int i = first; i % arr.length != last; i++) {
-			newArr[count] = arr[i % arr.length];
-			count++;
+		String[] copy = new String[capacity];
+		for( int i = 0; i <= size; i++) {
+			copy[i] = arr[(first + i) % arr.length];
 		}
-		arr = newArr;
+		arr = copy;
 	}
 
 	public int size(){
@@ -48,6 +48,17 @@ public class ResizingArrayQueueOfStrings {
 		return size == 0;
 	}
 
+	public static void main(String[] args) {
+		ResizingArrayQueueOfStrings qos = new ResizingArrayQueueOfStrings();
+		while (!StdIn.isEmpty()) {
+			String item = StdIn.readString();
+			if (item.equals("-")) {
+				StdOut.println(qos.dequeue());
+			} else {
+				qos.enqueue(item);
+			}
+		}
+	}
 
 
 }
