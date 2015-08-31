@@ -1,5 +1,8 @@
 package com.jaichaudhary.algorithms.collections;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 
 public class StackOfStringsLinkedList {
 
@@ -35,6 +38,19 @@ public class StackOfStringsLinkedList {
 
 	public int size() {
 		return size;
+	}
+
+	public static void main() {
+		StackOfStringsLinkedList sos = new StackOfStringsLinkedList();
+		while(!StdOut.isEmpty()) {
+			String item = StdIn.readString();
+			if (item.equals("-")) {
+				StdOut.println(sos.pop());
+			} else {
+				sos.push(item);
+			}
+		}
+
 	}
 
 }
