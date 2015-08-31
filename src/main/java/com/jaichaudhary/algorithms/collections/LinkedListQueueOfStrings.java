@@ -1,12 +1,13 @@
 package com.jaichaudhary.algorithms.collections;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 public class LinkedListQueueOfStrings {
 
 	private class Node {
 		String item;
 		Node next;
-		Node prev;
 	}
 
 	private Node first = null;
@@ -15,10 +16,14 @@ public class LinkedListQueueOfStrings {
 
 	public void enqueue(String item) {
 		 Node oldLast = last;
-		 Node last = new Node();
+		 last = new Node();
 		 last.item = item;
-		 last.prev = oldLast;
 		 last.next = null;
+		 if(isEmpty()) {
+			first = last;
+		} else {
+			oldLast.next = last;
+		}
 		 size++;
 	}
 
@@ -37,5 +42,15 @@ public class LinkedListQueueOfStrings {
 		return size;
 	}
 
-	
+	public static void main(String[] args) {
+		LinkedListQueueOfStrings qos = new LinkedListQueueOfStrings();
+		while(!StdIn.isEmpty()) {
+			String item = StdIn.readString();
+			if (item.equals("-")) {
+				StdOut.println(qos.dequeue());
+			} else {
+				qos.enqueue(item);
+			}
+		}
+	}
 }
