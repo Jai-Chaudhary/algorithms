@@ -11,24 +11,22 @@ public class StackOfStringsLinkedList {
 		Node next;
 	}
 
-	private Node first;
-	private int size;
+	private Node first = null;
+	private int size = 0;
 
-	public StackOfStringsLinkedList() {
-		first = null;
-		size = 0;
-	}
 
 	public void push(String item) {
 		Node oldFirst = first;
 		first = new Node();
 		first.item = item;
 		first.next = oldFirst;
+		size++;
 	}
 
 	public String pop() {
 		String item = first.item;
 		first = first.next;
+		size--;
 		return item;
 	}
 
