@@ -37,7 +37,7 @@ public class ResizingArrayStackOfStrings {
 
 	private void resize(int capacity) {
 		String[] newArr = new String[capacity];
-		for (int i = 0; i < arr.length ; i++) {
+		for (int i = 0; i < capacity ; i++) {
 			newArr[i] = arr[i];
 		}
 		arr = newArr;
