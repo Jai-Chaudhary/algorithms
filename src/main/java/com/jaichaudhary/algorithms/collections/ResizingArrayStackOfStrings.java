@@ -11,7 +11,7 @@ public class ResizingArrayStackOfStrings {
 
 	public void push(String item) {
 		if( size == arr.length) {
-			resize(2 * arr.length);
+			resize(2 * size);
 		}
 			arr[size++] = item;
 	}
@@ -19,8 +19,8 @@ public class ResizingArrayStackOfStrings {
 	public String pop() throws IndexOutOfBoundsException{
 		if (isEmpty()) {
 			throw new IndexOutOfBoundsException();
-		} else if (size <= 1 / 4 * arr.length) {
-			resize(1 /4 * arr.length);
+		} else if (size <=  arr.length / 4) {
+			resize( size / 2);
 		}
 		String item = arr[--size];
 		arr[size] = null;
