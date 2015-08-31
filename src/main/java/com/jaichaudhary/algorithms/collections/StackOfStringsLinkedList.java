@@ -9,9 +9,11 @@ public class StackOfStringsLinkedList {
 	}
 
 	private Node first;
+	private int size;
 
 	public StackOfStringsLinkedList() {
-		Node first = null;
+		first = null;
+		size = 0;
 	}
 
 	public void push(String input) {
@@ -26,7 +28,7 @@ public class StackOfStringsLinkedList {
 	}
 
 	public boolean isEmpty() {
-
+		return size == 0;
 	}
 
 	public int size() {
