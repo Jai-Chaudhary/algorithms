@@ -8,7 +8,7 @@ public class FixedCapacityStackOfStrings {
 	private String[] arr;
 	private int size;
 
-	public StackOfStrings(int maxSize) {
+	public FixedCapacityStackOfStrings(int maxSize) {
 		arr = new String[maxSize];
 		size = 0;
 	}
@@ -17,9 +17,12 @@ public class FixedCapacityStackOfStrings {
 		arr[size++] = item;
 	}
 
-	public String pop() {
+	public String pop() throws IndexOutOfBoundsException{
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException();
+		}
 		String item = arr[--size];
-		s[size] = null;
+		arr[size] = null;
 		return item;
 	}
 
@@ -33,7 +36,7 @@ public class FixedCapacityStackOfStrings {
 
 	public static void main(String[] args) {
 		int N = StdIn.readInt();
-		StackOfStrings sos = new StackOfStrings(N);
+		FixedCapacityStackOfStrings sos = new FixedCapacityStackOfStrings(N);
 		while (!StdIn.isEmpty()) {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
