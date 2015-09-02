@@ -1,5 +1,8 @@
 package com.jaichaudhary.algorithms.collections;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 public class Queue<Item> {
 
 	private Item[] newArr = (Item[]) new Object[1];
@@ -45,4 +48,15 @@ public class Queue<Item> {
 		return size == 0;
 	}
 
+	public static void main(String[] args) {
+		Queue sos = new Queue<String>();
+		while (!StdIn.isEmpty()) {
+			String item = StdIn.readString();
+			if (item.equals("-")) {
+				StdOut.println(sos.dequeue());
+			} else {
+				sos.enqueue(item);
+			}
+		}
+	}
 }
