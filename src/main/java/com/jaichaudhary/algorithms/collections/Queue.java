@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class Queue<Item> {
 
-	private Item[] newArr = (Item[]) new Object[1];
+	private Item[] arr = (Item[]) new Object[1];
 	private int size = 0;
 	private int first = 0;
 	private int last = 0;
@@ -19,8 +19,8 @@ public class Queue<Item> {
 		if( last == arr.length) last = 0;
 	}
 
-	public Item dequeue() throws NoSuchElementException{
-		if(isEmpty())	throw new NoSuchElementException("Queue underflow");
+	public Item dequeue() throws IndexOutOfBoundsException{
+		if(isEmpty())	throw new IndexOutOfBoundsException("Queue underflow");
 		Item item = arr[first];
 		arr[first] = null;
 		size--;
@@ -33,7 +33,7 @@ public class Queue<Item> {
 	}
 
 	private void resize(int capacity){
-		Item[] newArr = (Item[]) new Object[capacity];
+		Item[] copy = (Item[]) new Object[capacity];
 		for( int i = 0; i <= size; i++) {
 			copy[i] = arr[(first + i) % arr.length];
 		}
