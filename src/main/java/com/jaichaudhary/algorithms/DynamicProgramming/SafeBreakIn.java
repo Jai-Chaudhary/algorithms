@@ -5,8 +5,12 @@ import java.util.*;
 public class SafeBreakIn {
 	private class Sequence {
 		ArrayList<String> sequence;
+
+		public boolean exists(String item) {
+			return sequence.contains(item); 
+		}
 	}
-	
+
 	public static void main(String[] args) {
 
 		int[] digits = {0 , 1};
