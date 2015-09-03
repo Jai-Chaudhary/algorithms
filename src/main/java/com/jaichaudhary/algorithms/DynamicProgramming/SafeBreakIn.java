@@ -3,7 +3,12 @@ package com.jaichaudhary.algorithms.DynamicProgramming;
 import java.util.*;
 
 public class SafeBreakIn {
+	private class Sequence {
+		ArrayList<String> sequence;
+	}
+	
 	public static void main(String[] args) {
+
 		int[] digits = {0 , 1};
 		int mostSignificantBit = 2;
 
