@@ -11,12 +11,16 @@ public class SafeBreakIn {
 		}
 		public void add(String digit) {
 			if (sequence.size() > 1){
-				String lastItem = sequence.get(sequence.size() - 1));
-				String lastDigit = lastItem.charAt(lastItem.length() - 1));
-				if(!exists(lastDigit + digit){
+				String lastItem = sequence.get(sequence.size() - 1);
+				String lastDigit = lastItem.substring(lastItem.length() - 1);
+				if(!exists(lastDigit + digit)){
 					sequence.add(lastDigit + digit);
 				}
 			}
+		}
+
+		public String toString(){
+			return sequence.stream().reduce("", (a,b) -> a + b);
 		}
 	}
 
