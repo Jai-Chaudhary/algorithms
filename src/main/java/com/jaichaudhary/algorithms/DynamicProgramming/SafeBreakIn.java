@@ -7,7 +7,13 @@ public class SafeBreakIn {
 		ArrayList<String> sequence;
 
 		public boolean exists(String item) {
-			return sequence.contains(item); 
+			if (sequence.contains(item)) {
+				return true;
+			} else {
+				for(int i = 0; i < sequence.size(); i++) {
+					
+				}
+			}
 		}
 	}
 
