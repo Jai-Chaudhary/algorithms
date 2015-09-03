@@ -2,12 +2,20 @@ package com.jaichaudhary.algorithms.DynamicProgramming;
 
 import java.util.*;
 
+import edu.princeton.cs.algs4.StdOut;
+
 public class SafeBreakIn {
-	private class Sequence {
-		ArrayList<String> sequence;
+	private static class Sequence {
+		ArrayList<String> sequence = new ArrayList<String>();
 
 		public boolean exists(String item) {
 			return sequence.contains(item); 
+		}
+
+		public Sequence(String[] nums) {
+			for(String num: nums) {
+				sequence.add(num);
+			}
 		}
 		public void add(String digit) {
 			if (sequence.size() > 1){
@@ -32,9 +40,10 @@ public class SafeBreakIn {
 		//calculating sequences with most overlapping numbers with n digits
 		// E.g. 0010 4 digits 3 overlapping UNIQUE numbers of 2 digits - 00 01 10
 
-		String[] numbers = {"00", "01", "10", "11"};
 		int maxCountOfOverlappingNums = 1;
-		ArrayList<ArrayList<String>> sequencesWithMostNums = new ArrayList<ArrayList<String>>();
+		Sequence seq = new Sequence(new String[] {"00", "01", "10", "11"});
+		StdOut.println(seq.toString());
+		ArrayList<Sequence> sequencesWithMostNums = new ArrayList<Sequence>();
 
 		while(maxCountOfOverlappingNums < 4) {
 			
