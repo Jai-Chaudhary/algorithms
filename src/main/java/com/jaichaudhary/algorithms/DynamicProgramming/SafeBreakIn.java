@@ -28,7 +28,7 @@ public class SafeBreakIn {
 		}
 
 		public String toString(){
-			return sequence.stream().reduce("", (a,b) -> a + b);
+			return sequence.stream().reduce("", (a,b) -> a + ", " + b);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class SafeBreakIn {
 
 		int maxCountOfOverlappingNums = 1;
 		Sequence seq = new Sequence(new String[] {"00", "01", "10", "11"});
-		StdOut.println(seq.toString());
+		StdOut.println(seq);
 		ArrayList<Sequence> sequencesWithMostNums = new ArrayList<Sequence>();
 
 		while(maxCountOfOverlappingNums < 4) {
