@@ -56,6 +56,10 @@ public class ResizingArrayQueueOfStrings {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
 				StdOut.println(qos.dequeue());
+			} else if (item.equals("--")) {
+				while(!qos.isEmpty()){
+					StdOut.println(qos.dequeue());
+				}
 			} else {
 				qos.enqueue(item);
 			}
