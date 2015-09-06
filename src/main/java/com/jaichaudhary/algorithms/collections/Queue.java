@@ -5,14 +5,14 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class Queue<Item> {
 
-	private Item[] arr = (Item[]) new Object[1];
+	private Item[] arr = (Item[]) new Object[2];
 	private int size = 0;
 	private int first = 0;
 	private int last = 0;
 
 	public void enqueue(Item item) {
 		if(size == arr.length) {
-			resize(2 * size);
+			resize(2 * arr.length);
 		}
 		arr[last++] = item;
 		size++;
@@ -27,7 +27,7 @@ public class Queue<Item> {
 		first++;
 		if( first == arr.length)	first = 0;
 		if(arr.length <=  size / 4) {
-			resize(size / 2);
+			resize(arr.length / 2);
 		}
 		return item;
 	}
@@ -38,6 +38,8 @@ public class Queue<Item> {
 			copy[i] = arr[(first + i) % arr.length];
 		}
 		arr = copy;
+		first = 0;
+		last = size;
 	}
 
 	public int size(){
@@ -49,13 +51,17 @@ public class Queue<Item> {
 	}
 
 	public static void main(String[] args) {
-		Queue sos = new Queue<String>();
+		Queue qos = new Queue<String>();
 		while (!StdIn.isEmpty()) {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
-				StdOut.println(sos.dequeue());
+				StdOut.println(qos.dequeue());
+			} else if (item.equals("--")) {
+				while(!qos.isEmpty()){
+					StdOut.println(qos.dequeue());
+				}
 			} else {
-				sos.enqueue(item);
+				qos.enqueue(item);
 			}
 		}
 	}
