@@ -5,30 +5,30 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class ResizingArrayQueueOfStrings {
 
-	private String[] arr = new String[1];
+	private String[] arr = new String[2];
 	private int size = 0;
 	private int first = 0;
 	private int last = 0;
 
 	public void enqueue(String item) {
 		if(size == arr.length) {
-			resize(2 * size);
+			resize(2 * arr.length);
 		}
 		arr[last++] = item;
 		size++;
 		if( last == arr.length) last = 0;
 	}
 
-	public String dequeue() throws NoSuchElementException{
-		if(isEmpty())	throw new NoSuchElementException("Queue underflow");
+	public String dequeue() throws IndexOutOfBoundsException{
+		if(isEmpty()) {
+			throw new IndexOutOfBoundsException("Queue underflow");
+		}
 		String item = arr[first];
 		arr[first] = null;
 		size--;
 		first++;
 		if( first == arr.length)	first = 0;
- 		if(arr.length <=  size / 4) {
-			resize(size / 2);
-		}
+		if(size <=  arr.length / 4)	resize(arr.length / 2);
 		return item;
 	}
 
@@ -38,6 +38,8 @@ public class ResizingArrayQueueOfStrings {
 			copy[i] = arr[(first + i) % arr.length];
 		}
 		arr = copy;
+		first = 0;
+		last = size;
 	}
 
 	public int size(){
