@@ -49,6 +49,10 @@ public class ResizingArrayStackOfStrings {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
 				StdOut.println(sos.pop());
+			} else if (item.equals("--")) {
+				while(!sos.isEmpty()){
+					StdOut.println(sos.pop());
+				}
 			} else {
 				sos.push(item);
 			}
