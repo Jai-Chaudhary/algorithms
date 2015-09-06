@@ -44,7 +44,7 @@ public class Percolation {
                 if (j < grid[0].length - 1 && isOpen(i, j + 1))   uf.union(gridToArray(i, j), gridToArray(i, j + 1));
             }
         } else {
-            throw new IllegalArgumentException();
+            throw new IndexOutOfBoundsException();
         }
         
     }
@@ -54,7 +54,7 @@ public class Percolation {
         if (indicesInBound(i, j)) {
             return grid[i][j] == 0;
         } else {
-            throw new IllegalArgumentException();
+            throw new IndexOutOfBoundsException();
         }
         
     }
@@ -73,7 +73,7 @@ public class Percolation {
             }                
             return false;
         } else {
-            throw new IllegalArgumentException();
+            throw new IndexOutOfBoundsException();
         }
     }
 
