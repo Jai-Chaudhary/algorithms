@@ -37,8 +37,8 @@ public class PercolationVisualizer {
 
         // draw N-by-N grid
         int opened = 0;
-        for (int row = 0; row < N; row++) {
-            for (int col = 0; col < N; col++) {
+        for (int row = 1; row <= N; row++) {
+            for (int col = 1; col <= N; col++) {
                 if (perc.isFull(row, col)) {
                     StdDraw.setPenColor(StdDraw.BOOK_LIGHT_BLUE);
                     opened++;
@@ -76,7 +76,7 @@ public class PercolationVisualizer {
         while (!in.isEmpty()) {
             int i = in.readInt();
             int j = in.readInt();
-            perc.open(i - 1, j - 1);
+            perc.open(i, j);
             draw(perc, N);
             StdDraw.show(DELAY);
         }
