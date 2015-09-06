@@ -9,7 +9,7 @@ public class Percolation {
     private WeightedQuickUnionUF uf;
 
     // create N-by-N grid, with all sites blocked
-    public Percolation(int N){
+    public Percolation(int N) {
         if (N < 1) {
             throw new IllegalArgumentException();
         }
@@ -60,7 +60,8 @@ public class Percolation {
     }
 
     // is site (row i, column j) full?
-    // Full site is an open site that can be connected to an open site in the top row via a chain of neighboring (left, right, up, down) open sites.
+    // Full site is an open site that can be connected to an open site in the top row 
+    // via a chain of neighboring (left, right, up, down) open sites.
     public boolean isFull(int i, int j) {
         if (indicesInBound(i, j)) {
             if (isOpen(i, j)) {
