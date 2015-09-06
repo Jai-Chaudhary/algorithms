@@ -22,8 +22,8 @@ public class PercolationStats {
 			while(!simulation.percolates()) {
 				int i,j;
 				do {
-					i = StdRandom.uniform(N);
-					j = StdRandom.uniform(N);
+					i = StdRandom.uniform(N) + 1;
+					j = StdRandom.uniform(N) + 1;
 				} while(simulation.isOpen(i, j));
 				simulation.open(i,j);
 				countOpen++;
