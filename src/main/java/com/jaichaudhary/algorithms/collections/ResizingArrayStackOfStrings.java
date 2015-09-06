@@ -11,7 +11,7 @@ public class ResizingArrayStackOfStrings {
 
 	public void push(String item) {
 		if( size == arr.length) {
-			resize(2 * size);
+			resize(2 * arr.length);
 		}
 			arr[size++] = item;
 	}
@@ -20,7 +20,7 @@ public class ResizingArrayStackOfStrings {
 		if (isEmpty()) {
 			throw new IndexOutOfBoundsException();
 		} else if (size <=  arr.length / 4) {
-			resize( size / 2);
+			resize( arr.length / 2);
 		}
 		String item = arr[--size];
 		arr[size] = null;
@@ -36,11 +36,11 @@ public class ResizingArrayStackOfStrings {
 	}
 
 	private void resize(int capacity) {
-		String[] newArr = new String[capacity];
+		String[] copy = new String[capacity];
 		for (int i = 0; i < size ; i++) {
-			newArr[i] = arr[i];
+			copy[i] = arr[i];
 		}
-		arr = newArr;
+		arr = copy;
 	}
 
 	public static void main(String[] args) {
