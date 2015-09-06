@@ -11,7 +11,7 @@ public class Stack<Item> {
 
 	public void push(Item item) {
 		if( size == arr.length) {
-			resize(2 * size);
+			resize(2 * arr.length);
 		}
 			arr[size++] = item;
 	}
@@ -20,7 +20,7 @@ public class Stack<Item> {
 		if (isEmpty()) {
 			throw new IndexOutOfBoundsException();
 		} else if (size <=  arr.length / 4) {
-			resize( size / 2);
+			resize( arr.length / 2);
 		}
 		Item item = arr[--size];
 		arr[size] = null;
@@ -49,6 +49,10 @@ public class Stack<Item> {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
 				StdOut.println(sos.pop());
+			} else if (item.equals("--")) {
+				while(!sos.isEmpty()){
+					StdOut.println(sos.pop());
+				}
 			} else {
 				sos.push(item);
 			}
