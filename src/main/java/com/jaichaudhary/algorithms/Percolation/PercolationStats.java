@@ -1,4 +1,3 @@
-package com.jaichaudhary.algorithms.Percolation;
 
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
@@ -16,19 +15,19 @@ public class PercolationStats {
 		fractionOfOpenSites = new double[T];
 
 
-		for (int experiment =0; experiment < T; experiment++) {
+		for (int experiment = 0; experiment < T; experiment++) {
 			Percolation simulation = new Percolation(N);
 			int countOpen = 0;
 			while(!simulation.percolates()) {
-				int i,j;
+				int i, j;
 				do {
 					i = StdRandom.uniform(N) + 1;
 					j = StdRandom.uniform(N) + 1;
-				} while(simulation.isOpen(i, j));
-				simulation.open(i,j);
+				} while (simulation.isOpen(i, j));
+				simulation.open(i, j);
 				countOpen++;
 			}
-			fractionOfOpenSites[experiment] = ((double) countOpen )/ (N * N);
+			fractionOfOpenSites[experiment] = ((double) countOpen)/ (N * N);
 		}
 	}
 
@@ -50,7 +49,7 @@ public class PercolationStats {
 	}
 	// test client (described below)
 	public static void main(String[] args) {
-		PercolationStats stats= new PercolationStats(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+		PercolationStats stats = new PercolationStats(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 		StdOut.println("mean                    = " + stats.mean());
 		StdOut.println("stddev                  = " + stats.stddev());
 		StdOut.println("95% confidence interval = " + stats.confidenceLo() + ", " + stats.confidenceHi());
