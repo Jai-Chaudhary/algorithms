@@ -19,4 +19,8 @@ class MergeSort() {
         a[u] = a[v];
         a[v] = temp;
     } 
+
+    public static void main(String[] args) {
+    	
+    }
 }
