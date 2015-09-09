@@ -1,5 +1,7 @@
 package com.jaichaudhary.algorithms.Sorts;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 public class InsertionSort {
 
@@ -24,7 +26,15 @@ public class InsertionSort {
 		a[j] = temp;
 	}
 
+    private static void display(Comparable[] a){
+        for(int  i = 0; i < a.length; i++) {
+            StdOut.println(a[i]);
+        }
+    }
+
 	public static void main(String[] args) {
-		
+        String[] input = StdIn.readAllStrings();
+        InsertionSort.sort(input);
+        display(input);
 	}
 }
