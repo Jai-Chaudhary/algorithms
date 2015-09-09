@@ -24,4 +24,7 @@ public class InsertionSort {
 		a[j] = temp;
 	}
 
+	public static void main(String[] args) {
+		
+	}
 }
