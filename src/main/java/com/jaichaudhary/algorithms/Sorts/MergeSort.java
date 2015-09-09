@@ -6,7 +6,7 @@ class MergeSort() {
 
 	}
 
-	public static void sort(){
-		
+	public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi){
+
 	}
 }
