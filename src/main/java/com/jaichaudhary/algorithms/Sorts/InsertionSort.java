@@ -1,7 +1,14 @@
 package com.jaichaudhary.algorithms.Sorts;
 
 
-public class SelectionSort {
+public class InsertionSort {
 
+	private InsertionSort() {
+
+	}
+	
+	public static void sort() {
+
+	} 
 
 }
