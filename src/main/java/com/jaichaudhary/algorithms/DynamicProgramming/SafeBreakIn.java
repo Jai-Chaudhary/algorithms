@@ -32,6 +32,13 @@ public class SafeBreakIn {
 		}
 	}
 
+	// String[] setOfNums;
+
+
+	// public SafeBreakIn(int base, int mostSignificantBit) {
+
+	// }
+
 	public static void main(String[] args) {
 
 		int[] digits = {0 , 1};
@@ -40,12 +47,12 @@ public class SafeBreakIn {
 		//calculating sequences with most overlapping numbers with n digits
 		// E.g. 0010 4 digits 3 overlapping UNIQUE numbers of 2 digits - 00 01 10
 
-		int maxCountOfOverlappingNums = 1;
+		int maxUniqueOverlaps = 1;
 		Sequence seq = new Sequence(new String[] {"00", "01", "10", "11"});
 		StdOut.println(seq);
 		ArrayList<Sequence> sequencesWithMostNums = new ArrayList<Sequence>();
 
-		while(maxCountOfOverlappingNums < 4) {
+		while(maxUniqueOverlaps < 4) {
 			
 		}
 
