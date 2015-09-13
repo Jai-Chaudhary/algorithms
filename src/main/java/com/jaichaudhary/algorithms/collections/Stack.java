@@ -3,8 +3,9 @@ package com.jaichaudhary.algorithms.collections;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Iterator;
 
-public class Stack<Item> {
+public class Stack<Item> implements Iterable<Item> {
 
 	private Item[] arr = (Item[]) new Object[1];
 	private int size = 0;
@@ -41,6 +42,27 @@ public class Stack<Item> {
 			newArr[i] = arr[i];
 		}
 		arr = newArr;
+	}
+
+	public Iterator<Item> iterator() {
+		return new ArrayIterator();
+	}
+
+	private class ArrayIterator implements Iterator<Item> {
+		private int current = size;
+
+		public boolean hasNext() {
+			return size == 0;
+		}
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		}
+
+		public Item next() {
+			return arr[current--];
+		}
+
 	}
 
 	public static void main(String[] args) {
