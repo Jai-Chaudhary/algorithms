@@ -2,6 +2,7 @@ package com.jaichaudhary.algorithms.sort;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
 
 public class SelectionSort {
     
@@ -20,7 +21,7 @@ public class SelectionSort {
     }
 
     private static boolean less(Comparable u, Comparable v) {
-        return u.compareTo(v) > 0;
+        return u.compareTo(v) < 0;
     }
 
     private static void exch(Object[] a, int u, int v) {
@@ -37,7 +38,11 @@ public class SelectionSort {
 
     // Test Client
     public static void main(String[] args) {
-        String[] input = StdIn.readAllStrings();
+        int N = StdIn.readInt();
+        Double[] input = new Double[N];
+        for(int i = 0; i < N; i++) {
+            input[i] = StdRandom.uniform();
+        }
         SelectionSort.sort(input);
         display(input);
     }
