@@ -8,8 +8,8 @@ public class ShuffleSort{
 	private ShuffleSort() {};
 
 	public static void shuffle(Comparable[] a) {
-		for(int i = 1; i < a.length; i++) {
-			int randomIndex = StdRandom.uniform(i);
+		for(int i = 0; i < a.length; i++) {
+			int randomIndex = StdRandom.uniform(i + 1);
 			exch(a, i, randomIndex);
 		}
 	}
