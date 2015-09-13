@@ -1,4 +1,4 @@
-package com.jaichaudhary.algorithms.Sorts;
+package com.jaichaudhary.algorithms.sort;
 
 public class ShellSort {
 

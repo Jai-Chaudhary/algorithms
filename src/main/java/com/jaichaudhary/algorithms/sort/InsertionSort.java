@@ -1,4 +1,4 @@
-package com.jaichaudhary.algorithms.Sorts;
+package com.jaichaudhary.algorithms.sort;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
