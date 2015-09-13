@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 public class Stack<Item> implements Iterable<Item> {
 
-	private Item[] arr = (Item[]) new Object[1];
+	private Item[] arr = (Item[]) new Object[2];
 	private int size = 0;
 
 	public void push(Item item) {
@@ -17,9 +17,9 @@ public class Stack<Item> implements Iterable<Item> {
 			arr[size++] = item;
 	}
 
-	public Item pop() throws IndexOutOfBoundsException{
+	public Item pop() throws NoSuchElementException{
 		if (isEmpty()) {
-			throw new IndexOutOfBoundsException();
+			throw new NoSuchElementException("Stack Underflow");
 		} else if (size <=  arr.length / 4) {
 			resize( arr.length / 2);
 		}
