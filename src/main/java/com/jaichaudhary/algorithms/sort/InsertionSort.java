@@ -2,6 +2,7 @@ package com.jaichaudhary.algorithms.sort;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
 
 public class InsertionSort {
 
@@ -10,8 +11,8 @@ public class InsertionSort {
 
 	public static void sort(Comparable[] a) {
 		for(int i = 0; i < a.length; i++) {
-			for(int j = i ; j >= 0 && less(a[i], a[j]) ; j--) {
-				exch(a, j, i);
+			for(int j = i; j > 0 && less(a[j], a[j-1]) ; j--) {
+				exch(a, j, j-1);
 			}
 		}
 	}
@@ -33,7 +34,11 @@ public class InsertionSort {
     }
 
 	public static void main(String[] args) {
-        String[] input = StdIn.readAllStrings();
+        int N = StdIn.readInt();
+        Double[] input = new Double[N];
+        for(int i = 0; i < N; i++) {
+            input[i] = StdRandom.uniform();
+        }
         InsertionSort.sort(input);
         display(input);
 	}
