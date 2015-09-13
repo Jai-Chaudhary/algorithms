@@ -1,4 +1,4 @@
-package com.jaichaudhary.algorithms.collections;
+package com.jaichaudhary.collections;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
