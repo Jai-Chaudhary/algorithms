@@ -50,10 +50,10 @@ public class Stack<Item> implements Iterable<Item> {
 	}
 
 	private class ArrayIterator implements Iterator<Item> {
-		private int current = size;
+		private int current = size - 1;
 
 		public boolean hasNext() {
-			return size == 0;
+			return current >= 0;
 		}
 
 		public void remove() {
@@ -61,19 +61,20 @@ public class Stack<Item> implements Iterable<Item> {
 		}
 
 		public Item next() {
+			if (!hasNext()) throw new NoSuchElementException();
 			return arr[current--];
 		}
 
 	}
 
 	public static void main(String[] args) {
-		Stack sos = new Stack<String>();
+		Stack<String> sos = new Stack<String>();
 		while (!StdIn.isEmpty()) {
 			String item = StdIn.readString();
 			if (item.equals("-")) {
 				StdOut.println(sos.pop());
 			} else if (item.equals("--")) {
-				while(!sos.isEmpty()){
+				for(String s: sos) {
 					StdOut.println(sos.pop());
 				}
 			} else {
