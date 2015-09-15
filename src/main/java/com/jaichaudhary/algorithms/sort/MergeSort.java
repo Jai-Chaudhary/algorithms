@@ -12,24 +12,25 @@ class MergeSort() {
 	}
 
 	private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi){
-		for(int i = lo; i < hi; i++){
-			aux[i] = a[i];
-		}
-
-		int mid = (lo + hi) / 2;
-
+		int mid = lo + (hi - lo) / 2;
 		sort(a, aux, mid, hi);
 		sort(a, aux, lo, mid)
 		return merge(a, aux, lo, hi);
 
 	}
 
-	private static void merge(Comparable[] a, Comparable[] aux, int lo, int hi) {
-		int i = 0;
-		int j = 0;
-		int mid = (lo + hi) / 2;
-		while() {
-			if(i >= mid) a[lo]
+	private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+		for(int k = lo; k < hi; k++) {
+			aux[k] = a[k];
+		}
+
+		int i;
+		int j = mid;
+		for(int k = lo; k < hi; k++) {
+			if(i > mid) a[k] = aux[j++];
+			else if(j > hi) a[k] = aux[i++];
+			else if(less(a[i], a[j])) a[k] = aux[i++];
+			else a[k] = aux[j++];
 		}
 	}
 
