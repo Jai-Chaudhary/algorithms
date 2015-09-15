@@ -1,7 +1,10 @@
 package com.jaichaudhary.algorithms.sort;
 
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
 
-class MergeSort() {
+public class MergeSort {
 	private MergeSort() {
 
 	}
@@ -14,8 +17,8 @@ class MergeSort() {
 	private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi){
 		int mid = lo + (hi - lo) / 2;
 		sort(a, aux, mid, hi);
-		sort(a, aux, lo, mid)
-		return merge(a, aux, lo, hi);
+		sort(a, aux, lo, mid);
+		merge(a, aux, lo, mid, hi);
 
 	}
 
@@ -24,7 +27,7 @@ class MergeSort() {
 			aux[k] = a[k];
 		}
 
-		int i;
+		int i = lo;
 		int j = mid;
 		for(int k = lo; k < hi; k++) {
 			if(i > mid) a[k] = aux[j++];
@@ -38,6 +41,11 @@ class MergeSort() {
         return u.compareTo(v) > 0;
     }
 
+    private static void display(Comparable[] a){
+        for(int  i = 0; i < a.length; i++) {
+            StdOut.println(a[i]);
+        }
+    }
 
     // Test Client
     public static void main(String[] args) {
