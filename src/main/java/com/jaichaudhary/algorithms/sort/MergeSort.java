@@ -38,13 +38,15 @@ class MergeSort() {
         return u.compareTo(v) > 0;
     }
 
-    private static void exch(Object[] a, int u, int v) {
-        Object temp = a[u];
-        a[u] = a[v];
-        a[v] = temp;
-    } 
 
+    // Test Client
     public static void main(String[] args) {
-
+        int N = StdIn.readInt();
+        Double[] input = new Double[N];
+        for(int i = 0; i < N; i++) {
+            input[i] = StdRandom.uniform();
+        }
+        SelectionSort.sort(input);
+        display(input);
     }
 }
