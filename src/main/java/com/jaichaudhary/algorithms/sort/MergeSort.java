@@ -6,8 +6,8 @@ class MergeSort() {
 
 	}
 
-	public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi){
-		for(int i = 0; i < a.length; i++){
+	public static void sort(Comparable[] a, int lo, int hi){
+		for(int i = lo; i < hi; i++){
 			aux[i] = a[i];
 		}
 
@@ -16,6 +16,10 @@ class MergeSort() {
 		sort(a, aux, lo, mid);
 		return merge(a, aux, lo, hi);
 
+	}
+
+	private static void merge(Comparable[] a, Comparable[] aux, int lo, int hi) {
+		
 	}
 
 	private static boolean less(Comparable u, Comparable v) {
