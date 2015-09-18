@@ -4,7 +4,6 @@ Algorithms and Data Structure implemented in  Java
 - Union Find
 
 - Collections
-
   - Bags
   - Queues
   - Stacks
@@ -12,7 +11,6 @@ Algorithms and Data Structure implemented in  Java
   - Heaps
 
 - Sorting
-
   - Selection Sort
   - Insertion Sort
   - Shell Sort
