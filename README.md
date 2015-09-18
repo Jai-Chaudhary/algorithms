@@ -1,12 +1,13 @@
 # Algorithms
 Algorithms and Data Structure implemented in  Java
 
-Union Find
+- Union Find
 
-Queues
-Stacks
-Bags
+- Collections
+-- Bags
+-- Queues
+-- Stacks
+-- Priority Queues
+-- Heaps
 
-Priority Queues
-Heaps
-
+Sorts
