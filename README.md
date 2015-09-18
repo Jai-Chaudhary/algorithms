@@ -2,6 +2,9 @@
 Algorithms and Data Structure implemented in  Java
 
 - Union Find
+ - Quick Find
+ - Quick Union
+ - Weighted Quick Union
 
 - Collections
   - Bags
