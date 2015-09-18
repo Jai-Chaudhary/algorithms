@@ -4,10 +4,11 @@ Algorithms and Data Structure implemented in  Java
 - Union Find
 
 - Collections
--- Bags
--- Queues
--- Stacks
--- Priority Queues
--- Heaps
+
+  - Bags
+  - Queues
+  - Stacks
+  - Priority Queues
+  - Heaps
 
 Sorts
