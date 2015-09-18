@@ -11,4 +11,11 @@ Algorithms and Data Structure implemented in  Java
   - Priority Queues
   - Heaps
 
-Sorts
+- Sorting
+
+  - Selection Sort
+  - Insertion Sort
+  - Shell Sort
+  - Shuffle Sort
+  - Merge Sort
+  - Quick Sort
