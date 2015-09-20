@@ -22,3 +22,5 @@ Algorithms and Data Structure implemented in  Java
   - Quick Sort
 
 -  Symbol Tables
+- Search Trees
+- Binary Search Trees
