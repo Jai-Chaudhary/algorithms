@@ -20,6 +20,7 @@ Algorithms and Data Structure implemented in  Java
   - Shuffle Sort
   - Merge Sort
   - Quick Sort
+   - Quick Select
 
 -  Symbol Tables
 - Search Trees
