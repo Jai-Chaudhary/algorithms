@@ -21,6 +21,7 @@ Algorithms and Data Structure implemented in  Java
   - Merge Sort
   - Quick Sort
    - Quick Select
+   - Djikstra 3 way Quick Sort
 
 -  Symbol Tables
 - Search Trees
