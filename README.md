@@ -23,6 +23,9 @@ Algorithms and Data Structure implemented in  Java
    - Quick Select
    - Djikstra 3 way Quick Sort
 
--  Symbol Tables
-- Search Trees
-- Binary Search Trees
+- Symbol Tables
+ - Binary Search Trees
+ - Balanced Trees
+  - 2-3 Tree
+  - Red Black Tree
+ - Interval Trees
