@@ -1,19 +1,27 @@
 # Algorithms
 Algorithms and Data Structure implemented in  Java
 
-- Union Find
+1 Union Find
  - Quick Find
  - Quick Union
  - Weighted Quick Union
 
-- Collections
+2 Collections
   - Bags
   - Queues
   - Stacks
   - Priority Queues
-  - Heaps
+   - Elementary UnOrdered
+   - Elementray Ordered
+   - Binary Heaps
+  - Symbol Tables
+    - Binary Search Trees
+    - Balanced Trees
+     - 2-3 Tree
+     - Red Black Tree
+     - Interval Trees
 
-- Sorting
+3 Sorting
   - Selection Sort
   - Insertion Sort
   - Shell Sort
@@ -23,9 +31,4 @@ Algorithms and Data Structure implemented in  Java
    - Quick Select
    - Djikstra 3 way Quick Sort
 
-- Symbol Tables
-  - Binary Search Trees
-  - Balanced Trees
-   - 2-3 Tree
-   - Red Black Tree
- - Interval Trees
+
