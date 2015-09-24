@@ -35,3 +35,6 @@ Algorithms and Data Structure implemented in  Java
 
 4 Graph Algorithms
  - Depth First Search
+ - Breadth First Search
+ - Beam Search
+ - A* Search
