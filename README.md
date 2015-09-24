@@ -34,3 +34,4 @@ Algorithms and Data Structure implemented in  Java
    - Djikstra 3 way Quick Sort
 
 4 Graph Algorithms
+ - Depth First Search
