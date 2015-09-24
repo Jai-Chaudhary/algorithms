@@ -38,3 +38,5 @@ Algorithms and Data Structure implemented in  Java
  - Breadth First Search
  - Beam Search
  - A* Search
+ - Topological Sorting
+ - Max Flow Min Cut
