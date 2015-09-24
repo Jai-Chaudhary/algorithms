@@ -5,6 +5,7 @@ Algorithms and Data Structure implemented in  Java
  - Quick Find
  - Quick Union
  - Weighted Quick Union
+ - Weighted Quick Union with Path Compression
 
 2 Collections
   - Bags
