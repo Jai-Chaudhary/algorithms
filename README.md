@@ -11,6 +11,7 @@ Algorithms and Data Structure implemented in  Java
   - Bags
   - Queues
   - Stacks
+  - Randomized Dequeues
   - Priority Queues
    - Elementary UnOrdered
    - Elementray Ordered
